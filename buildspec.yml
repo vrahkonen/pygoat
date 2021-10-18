@@ -1,0 +1,13 @@
+version: 0.2
+phases: 
+  build: 
+    commands: 
+      - "echo Build started on `date`"
+      - "docker-compose build"
+  post_build: 
+    commands: 
+      - "docker-compose push"
+      - "echo Build completed on `date`"
+  pre_build: 
+    commands: 
+      - "echo Preparing for build..."
